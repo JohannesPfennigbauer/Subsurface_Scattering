@@ -5,25 +5,20 @@
 \usepackage{latexsym}
 \usepackage{amsmath}
 \usepackage{enumitem}
-\usepackage{listings}
-\usepackage{graphicx}
-\usepackage{tabto}
-\usepackage{subfig}
-\usepackage{here}
-\usepackage{float}
-\usepackage{url}
-\usepackage{tikz}
-\usepackage{tcolorbox}
-\usepackage{minted}
-\usepackage{hyperref}
+% \usepackage{listings}
+% \usepackage{graphicx}
+% \usepackage{tabto}
+% \usepackage{subfig}
+% \usepackage{here}
+% \usepackage{float}
+% \usepackage{url}
+% \usepackage{tikz}
+% \usepackage{tcolorbox}
+% \usepackage{minted}
+% \usepackage{hyperref}
 \usepackage{cite}
-\usetikzlibrary{chains}
-
-\usepackage[
-top    = 2.5cm,
-bottom = 2.50cm,
-left   = 2.50cm,
-right  = 2.5cm]{geometry}
+\usepackage[backend=bibtex,style=numeric]{biblatex}
+\addbibresource{bibliography.bib}
 
 \newcommand{\R}{\mathbf{R}}
 \newcommand{\imp}{\Rightarrow}
@@ -47,7 +42,7 @@ right  = 2.5cm]{geometry}
 
 \section{Introduction}
 
-
+blablabla \cite{Morrison2020}
 
 
 
@@ -68,6 +63,5 @@ Soil moisture content has a huge impact on many aspects of our society; e.g.,  c
 
 \newpage
 
-\bibliographystyle{plain}
-\bibliography{References}
+\printbibliography[title={References}]
 \end{document}
