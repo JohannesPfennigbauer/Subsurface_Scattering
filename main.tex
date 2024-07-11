@@ -1,0 +1,73 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amssymb}
+\usepackage{fullpage}
+\usepackage{latexsym}
+\usepackage{amsmath}
+\usepackage{enumitem}
+\usepackage{listings}
+\usepackage{graphicx}
+\usepackage{tabto}
+\usepackage{subfig}
+\usepackage{here}
+\usepackage{float}
+\usepackage{url}
+\usepackage{tikz}
+\usepackage{tcolorbox}
+\usepackage{minted}
+\usepackage{hyperref}
+\usepackage{cite}
+\usetikzlibrary{chains}
+
+\usepackage[
+top    = 2.5cm,
+bottom = 2.50cm,
+left   = 2.50cm,
+right  = 2.5cm]{geometry}
+
+\newcommand{\R}{\mathbf{R}}
+\newcommand{\imp}{\Rightarrow}
+\newcommand{\gdw}{\Longleftrightarrow}
+
+
+\title{Data-intensive Computing - Exercise 3}
+\author{Pfennigbauer Johannes 11902046}
+
+\begin{document}
+\maketitle
+
+\section{Summary}
+\begin{itemize}[label=]
+    \item \textbf{Title:} The Impact of Subsurface Scattering on Microwave-Derived Soil Moisture Retrievals
+    \item \textbf{Supervisor:} Martin Schobben, Dept. of Geodesy and Geoinformation, TU Wien
+    \item \textbf{Co-Supervisor:} tba
+    \item \textbf{Start of Project:} July 2024
+    \item \textbf{Domain-Specific Lecture:} Data Retrieval in Earth Observation
+\end{itemize}
+
+\section{Introduction}
+
+
+
+
+
+Soil moisture content has a huge impact on many aspects of our society; e.g.,  crop yields, fresh water resources, and ground failure due to soil compaction and subsidence. Microwave remote sensing has proven to be an effective tool to monitor surface soil moisture on a global scale while recording daily, seasonal, and  longer term dynamics. This technique works on the premise that microwave backscattering increases due the dielectric contrast at the air—soil interface under wetter conditions [1]. Nevertheless under certain environmental circumstances the technique suffers from uncertainties. One such situation arises when microwaves reflect from surfaces in arid regions signified by the presence of rocks or distinct horizons in soils. This phenomenon has been dubbed “subsurface scattering”. Arid regions with high subsurface scattering show up as bright reflective surfaces in retrieved radar images, thereby giving the false impression of highly saturated soil water conditions. This reversed relationship between soil moisture and microwave backscattering is thus regarded as an “anomaly” [2], [3]. The remote sensing group at the TU Wien has developed algorithms for the detection of such anomalies in radar images obtained by ASCAT and Sentinel-1 sensors [4], [5]. Both algorithms rely on the temporal correlation of the backscatter timeseries and a reference soil moisture dataset, thereby deriving a probability estimate of the occurrence of backscatter anomalies.  Visual inspection of the so-derived anomaly maps indicate a relationship between soil type, and specifically the coarse fraction of soils, under drier conditions. In this project we want to further disentangle the drivers of anomalous backscattering by comparing auxiliary data, such as terrain height, soil groups, and soil composition with anomaly maps in a more quantitative manner. It is foreseen that regression models will aid this goal, as these models can be adapted to alleviate biases associated when comparing spatially referenced variables, as well as allowing for the study of main and interacting effects on anomalous backscattering.
+
+\section{Problem Statement}
+
+\section{Datasets}
+
+\section{Outline and Milestones}
+1. Data collection
+2. Data Preprocessing
+3. Building a simple model
+4. Draw the full picture
+5. Report
+
+\section{Deliverables}
+
+\newpage
+
+\bibliographystyle{plain}
+\bibliography{References}
+\end{document}
