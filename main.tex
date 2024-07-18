@@ -25,7 +25,7 @@
 \newcommand{\gdw}{\Longleftrightarrow}
 
 
-\title{Data-intensive Computing - Exercise 3}
+\title{Interdisciplinary Project in Data Science}
 \author{Pfennigbauer Johannes 11902046}
 
 \begin{document}
@@ -37,30 +37,40 @@
     \item \textbf{Supervisor:} Martin Schobben, Dept. of Geodesy and Geoinformation, TU Wien
     \item \textbf{Co-Supervisor:} tba
     \item \textbf{Start of Project:} July 2024
-    \item \textbf{Domain-Specific Lecture:} Data Retrieval in Earth Observation
+    \item \textbf{Domain-Specific Lecture:} 120.110 Data Retrieval in Earth Observation
 \end{itemize}
 
 \section{Introduction}
 
-blablabla \cite{Morrison2020}
-
-
-
-Soil moisture content has a huge impact on many aspects of our society; e.g.,  crop yields, fresh water resources, and ground failure due to soil compaction and subsidence. Microwave remote sensing has proven to be an effective tool to monitor surface soil moisture on a global scale while recording daily, seasonal, and  longer term dynamics. This technique works on the premise that microwave backscattering increases due the dielectric contrast at the air—soil interface under wetter conditions [1]. Nevertheless under certain environmental circumstances the technique suffers from uncertainties. One such situation arises when microwaves reflect from surfaces in arid regions signified by the presence of rocks or distinct horizons in soils. This phenomenon has been dubbed “subsurface scattering”. Arid regions with high subsurface scattering show up as bright reflective surfaces in retrieved radar images, thereby giving the false impression of highly saturated soil water conditions. This reversed relationship between soil moisture and microwave backscattering is thus regarded as an “anomaly” [2], [3]. The remote sensing group at the TU Wien has developed algorithms for the detection of such anomalies in radar images obtained by ASCAT and Sentinel-1 sensors [4], [5]. Both algorithms rely on the temporal correlation of the backscatter timeseries and a reference soil moisture dataset, thereby deriving a probability estimate of the occurrence of backscatter anomalies.  Visual inspection of the so-derived anomaly maps indicate a relationship between soil type, and specifically the coarse fraction of soils, under drier conditions. In this project we want to further disentangle the drivers of anomalous backscattering by comparing auxiliary data, such as terrain height, soil groups, and soil composition with anomaly maps in a more quantitative manner. It is foreseen that regression models will aid this goal, as these models can be adapted to alleviate biases associated when comparing spatially referenced variables, as well as allowing for the study of main and interacting effects on anomalous backscattering.
+Since 2010, soil moisture has been considered an essential climate variable in the Global Climate Observing System. It is known to be a reliable predictor of floods and droughts, an essential parameter for agricultural management, and a meaningful estimate of other climate variables.\cite{Morrison2020} This underscores the importance of a robust technique for measuring soil moisture efficiently on a large scale.\\
+One approach is microwave remote sensing, which uses microwave backscatter signals as an estimate of soil moisture. This technique is based on the premise that the backscatter signal is directly related to the soil moisture content, and that higher soil moisture content will result in a stronger backscatter signal. However, under certain circumstances, such as frozen soil, this technique may not provide reliable results. Similar to frozen soil, the signal strength can also be misleading when microwaves are reflected from dry, hard soil, especially in arid regions. This effect, called "subsurface scattering", occurs because the microwaves pass through the first few centimetres of dry soil but are reflected when they hit hard surfaces below, such as rocks. This phenomenon results in an inverse relationship between soil moisture and the backscatter signal compared to the typical assumption.\cite{Wagner2022} \\
+As a consequence the data obtained using the traditional assumption would show high soil moisture content in these arid regions, where in situ measurements prove that it is actually very dry. Therefore, the Vienna University of Technology has developed certain methods to detect such anomalies on radar images using a reference soil moisture dataset. The analysis shows that the soil type and the coarse fraction of the soils could be reliable variables for the detection of this type of anomaly. \cite{Wagner2024}\\ 
+This project aims to take a more comprehensive quantitative approach using auxiliary data such as terrain elevation, soil group and soil composition to extend the existing method and investigate the mentioned effect using the example of the United States of America.
 
 \section{Problem Statement}
+Based on the research from the remote sensing group at the Vienna University of Technology and their findings in the form of an anomaly map, we will build a regression model with additional data to further investigate and explain the occurrence of such anomalies. The goal is to identify the main influences from a wider range of variables such as terrain elevation, soil type, soil composition and other potential data attributes in the United States of America.
 
 \section{Datasets}
+The European Space Agency's Sentinel-1 mission has a resolution down to 5 meters, which enables it to provide highly accurate geospatial data over time of the measured backscatter signal. Together with the anomaly probabilities derived from the TU Vienna method mentioned above, this will be the starting point for this project.\\
+This dataset will then be enriched with additional data attributes as mentioned above from the United States Geological Survey (USGS) and the Natural Resources Conservation Service of the US Department of Agriculture. Specifically, the National Elevation Dataset (NED) and the gridded National Soil Survey Geographic Database (gNATSGO) will be used. 
 
 \section{Outline and Milestones}
-1. Data collection
-2. Data Preprocessing
-3. Building a simple model
-4. Draw the full picture
-5. Report
+\begin{itemize}
+    \item[1.] \textbf{Data Collection}\\
+        Fortunately, the base dataset is openly available in the Coperincus Data Space Ecosystem. The probability of anomalies will be derived using the method of the Remote Sensing Group of the Vienna University of Technology. Additional attributes will be collected from US national open source providers.
+    \item[2.] \textbf{Data Preprocessing}\\\
+        During the preprocessing phase, it is critical to properly join all data. If necessary, other preprocessing steps such as scaling, outlier removal, etc. are applied.
+    \item[3.] \textbf{A Simple Model}\\\
+        The analysis will start with a simple model with only a few attributes for better interpretability and understanding of the behavior.
+    \item[4.] \textbf{Extending the model}\\\
+        To cover a more comprehensive list of potentially relevant attributes, the simple model will then be extended with selected additional data attributes. At each step, the change in performance and behavior of the model is noted.
+    \item[5.] \textbf{Report}\\\
+        All observations from the project, including the entire setup process, will finally be summarized in a written report.
+\end{itemize}
+
 
 \section{Deliverables}
-
+This project will result in two deliverables. On the one hand, there will be the project report, which describes the data processing and the implemented model itself in detail. On the other hand, there will also be a git repository containing the project's code, so that any user with access to the data can recreate the analysis.
 \newpage
 
 \printbibliography[title={References}]
