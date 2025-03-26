@@ -1,0 +1,23 @@
+name: 01_multiple-regression
+channels:
+  - conda-forge
+dependencies:
+  - python=3.10
+  - pip
+  - mamba
+  - jupyter
+  - scikit-learn
+  - xarray
+  - zarr
+  - dask
+  - dask-ml
+  - dask-geopandas
+  - geopandas
+  - datashader
+  - seaborn
+  - rasterio
+  - earthengine-api
+  - geemap
+  - shapely
+  - xgboost
+  - lime
