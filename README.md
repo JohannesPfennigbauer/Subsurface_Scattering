@@ -1,5 +1,7 @@
 <!-- [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/Martin Schobben/big_eo_models/main) -->
 
+Original repository: https://github.com/MartinSchobben/big_eo_models
+
 # Regression Models for Big Earth Observation Datasets 
 
 This is a notebook on multiple regression modelling on big eo datasets.
